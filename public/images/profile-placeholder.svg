@@ -1,0 +1,17 @@
+<svg width="700" height="900" viewBox="0 0 700 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="900" fill="#08110C"/>
+  <rect width="700" height="900" fill="url(#paint0_radial)"/>
+  <rect x="110" y="120" width="480" height="620" rx="240" fill="#F3EDE0"/>
+  <rect x="185" y="180" width="330" height="300" rx="165" fill="#F0D7C0"/>
+  <path d="M245 760C245 630.214 350.214 525 480 525H220C349.786 525 455 630.214 455 760V790H245V760Z" fill="#F8F5F0"/>
+  <path d="M350 505C425.663 505 487 443.663 487 368C487 292.337 425.663 231 350 231C274.337 231 213 292.337 213 368C213 443.663 274.337 505 350 505Z" fill="#F4D8BE"/>
+  <path d="M252 342C252 286.772 296.772 242 352 242C407.228 242 452 286.772 452 342V370H252V342Z" fill="#181818"/>
+  <path d="M220 790C220 646.959 335.959 531 479 531H221C364.041 531 480 646.959 480 790V900H220V790Z" fill="#F7F3EC"/>
+  <text x="350" y="836" fill="#D7D0C2" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" letter-spacing="6">REPLACE WITH YOUR PHOTO</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 164) rotate(64.0108) scale(502.584 409.311)">
+      <stop stop-color="#0D5D2E"/>
+      <stop offset="1" stop-color="#08110C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
