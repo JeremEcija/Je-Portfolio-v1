@@ -180,20 +180,20 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
 
       {activeProject && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 px-4 py-6 backdrop-blur-sm sm:px-6"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
           onClick={closeProject}
         >
           <div
-            className="mx-auto grid h-full w-full max-w-7xl overflow-hidden rounded-[30px] border border-[#a2cb8b]/12 bg-[#0f140c] lg:grid-cols-[1.45fr_0.95fr]"
+            className="mx-auto flex h-[100dvh] w-full max-w-7xl flex-col overflow-y-auto bg-[#0f140c] sm:my-4 sm:h-[calc(100dvh-2rem)] sm:overflow-hidden sm:rounded-[30px] sm:border sm:border-[#a2cb8b]/12 lg:grid lg:grid-cols-[1.45fr_0.95fr]"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex min-h-[360px] flex-col border-b border-[#a2cb8b]/10 lg:min-h-0 lg:border-b-0 lg:border-r">
-              <div className="relative flex-1 bg-[#151515]">
+            <div className="flex shrink-0 flex-col border-b border-[#a2cb8b]/10 lg:min-h-0 lg:border-b-0 lg:border-r">
+              <div className="relative h-[220px] bg-[#151515] sm:h-[280px] lg:h-auto lg:min-h-0 lg:flex-1">
                 <Image
                   src={screenshots[activeScreenshotIndex] ?? "/images/project-placeholder.svg"}
                   alt={`${activeProject.title} screenshot ${activeScreenshotIndex + 1}`}
                   fill
-                  className="object-contain p-6"
+                  className="object-contain p-3 sm:p-6"
                 />
 
                 {screenshots.length > 1 && (
@@ -201,34 +201,34 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                     <button
                       type="button"
                       onClick={showPreviousScreenshot}
-                      className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#a2cb8b]/12 bg-[#0f140c]/90 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30"
+                      className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#a2cb8b]/12 bg-[#0f140c]/90 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 sm:left-4 sm:h-11 sm:w-11"
                     >
                       <ArrowLeft className="h-4 w-4" />
                     </button>
                     <button
                       type="button"
                       onClick={showNextScreenshot}
-                      className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#a2cb8b]/12 bg-[#0f140c]/90 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30"
+                      className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#a2cb8b]/12 bg-[#0f140c]/90 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 sm:right-4 sm:h-11 sm:w-11"
                     >
                       <ArrowRight className="h-4 w-4" />
                     </button>
                   </>
                 )}
 
-                <div className="absolute bottom-4 right-4 rounded-md border border-[#a2cb8b]/12 bg-[#0f140c]/90 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[#e8f5bd]">
+                <div className="absolute bottom-3 right-3 rounded-md border border-[#a2cb8b]/12 bg-[#0f140c]/90 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-[#e8f5bd] sm:bottom-4 sm:right-4 sm:px-3 sm:text-xs">
                   {String(activeScreenshotIndex + 1).padStart(2, "0")} /{" "}
                   {String(screenshots.length).padStart(2, "0")}
                 </div>
               </div>
 
               {screenshots.length > 1 && (
-                <div className="flex gap-3 overflow-x-auto border-t border-[#a2cb8b]/10 bg-[#11170e] p-4">
+                <div className="flex gap-2 overflow-x-auto border-t border-[#a2cb8b]/10 bg-[#11170e] p-3 sm:gap-3 sm:p-4">
                   {screenshots.map((screenshot, index) => (
                     <button
                       key={`${activeProject.slug}-${index}`}
                       type="button"
                       onClick={() => setActiveScreenshotIndex(index)}
-                      className={`relative h-20 w-28 shrink-0 overflow-hidden rounded-xl border ${
+                      className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border sm:h-20 sm:w-28 ${
                         index === activeScreenshotIndex
                           ? "border-[#c44545]"
                           : "border-[#a2cb8b]/10"
@@ -246,49 +246,49 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
               )}
             </div>
 
-            <div className="flex min-h-0 flex-col bg-[#0c100a]">
-              <div className="flex items-center justify-between border-b border-[#a2cb8b]/10 px-6 py-4">
-                <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#c44545]">
+            <div className="flex min-h-0 flex-col bg-[#0c100a] lg:overflow-hidden">
+              <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[#a2cb8b]/10 bg-[#0c100a] px-4 py-3 sm:px-6 sm:py-4">
+                <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#c44545] sm:text-xs sm:tracking-[0.32em]">
                   Project • {String((activeProjectIndex ?? 0) + 1).padStart(2, "0")}
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <button
                     type="button"
                     onClick={showPreviousProject}
-                    className="rounded-full border border-[#a2cb8b]/12 p-2 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30"
+                    className="rounded-full border border-[#a2cb8b]/12 p-1.5 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 sm:p-2"
                   >
                     <ArrowLeft className="h-4 w-4" />
                   </button>
                   <button
                     type="button"
                     onClick={showNextProject}
-                    className="rounded-full border border-[#a2cb8b]/12 p-2 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30"
+                    className="rounded-full border border-[#a2cb8b]/12 p-1.5 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 sm:p-2"
                   >
                     <ArrowRight className="h-4 w-4" />
                   </button>
                   <button
                     type="button"
                     onClick={closeProject}
-                    className="rounded-full border border-[#a2cb8b]/12 p-2 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30"
+                    className="rounded-full border border-[#a2cb8b]/12 p-1.5 text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 sm:p-2"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto px-6 py-6">
-                <h3 className="text-4xl font-black text-[#f7fbe8]">
+              <div className="flex-1 px-4 py-5 sm:px-6 sm:py-6 lg:overflow-y-auto">
+                <h3 className="text-2xl font-black text-[#f7fbe8] sm:text-3xl lg:text-4xl">
                   {activeProject.title}
                 </h3>
-                <p className="mt-6 leading-8 text-[#e8f5bd]/78">
+                <p className="mt-4 text-sm leading-7 text-[#e8f5bd]/78 sm:mt-6 sm:text-base sm:leading-8">
                   {activeProject.longDescription ?? activeProject.description}
                 </p>
 
-                <div className="mt-8 border-t border-[#a2cb8b]/10 pt-6">
+                <div className="mt-6 border-t border-[#a2cb8b]/10 pt-5 sm:mt-8 sm:pt-6">
                   <p className="text-xs uppercase tracking-[0.3em] text-[#a2cb8b]/55">
                     Built With
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
                     {activeProject.tags.map((tag) => (
                       <span
                         key={tag}
@@ -300,15 +300,15 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                   </div>
                 </div>
 
-                <div className="mt-8 border-t border-[#a2cb8b]/10 pt-6">
+                <div className="mt-6 border-t border-[#a2cb8b]/10 pt-5 sm:mt-8 sm:pt-6">
                   <p className="text-xs uppercase tracking-[0.3em] text-[#a2cb8b]/55">
                     Links
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
+                  <div className="mt-3 flex flex-col gap-3 sm:mt-4 sm:flex-row sm:flex-wrap">
                     {activeProject.liveUrl && (
                       <Button
                         asChild
-                        className="rounded-xl bg-[#c44545] text-[#f7fbe8] hover:bg-[#ad3d3d]"
+                        className="h-11 w-full rounded-xl bg-[#c44545] text-[#f7fbe8] hover:bg-[#ad3d3d] sm:w-auto"
                       >
                         <a href={activeProject.liveUrl} target="_blank" rel="noopener noreferrer">
                           Visit Live <ExternalLink className="ml-2 h-4 w-4" />
@@ -319,7 +319,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                       <Button
                         asChild
                         variant="outline"
-                        className="rounded-xl border-[#a2cb8b]/20 bg-transparent text-[#e8f5bd] hover:bg-[#161d12]"
+                        className="h-11 w-full rounded-xl border-[#a2cb8b]/20 bg-transparent text-[#e8f5bd] hover:bg-[#161d12] sm:w-auto"
                       >
                         <a href={activeProject.repoUrl} target="_blank" rel="noopener noreferrer">
                           View Code <Github className="ml-2 h-4 w-4" />
@@ -330,7 +330,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                 </div>
               </div>
 
-              <div className="border-t border-[#a2cb8b]/10 px-6 py-4 text-[10px] uppercase tracking-[0.26em] text-[#a2cb8b]/55">
+              <div className="hidden border-t border-[#a2cb8b]/10 px-6 py-4 text-[10px] uppercase tracking-[0.26em] text-[#a2cb8b]/55 sm:block">
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   <span>Esc Close</span>
                   <span>&larr;/&rarr; Gallery</span>
