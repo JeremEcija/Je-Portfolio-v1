@@ -3,8 +3,8 @@ export const SITE_CONFIG = {
   title: "Jeremiah Ecija — Full-Stack Developer",
   description:
     "Portfolio of Jeremiah Ecija, a full-stack developer building modern web systems.",
-  url: "https://your-domain.com",
-  email: "you@example.com",
+  url: "https://je-portfolio-v1.vercel.app/",
+  email: "jeremiah.ecija04@gmail.com",
   social: {
     github: "https://github.com/your-username",
     linkedin: "https://linkedin.com/in/your-username",

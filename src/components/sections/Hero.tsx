@@ -71,7 +71,7 @@ export function Hero() {
               size="lg"
               className="h-12 rounded-full bg-[#5b7e3c] px-6 text-[#f7fbe8] hover:bg-[#4d6d32]"
             >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Ecija-Resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume <Download className="ml-2 h-4 w-4" />
               </a>
             </Button>
