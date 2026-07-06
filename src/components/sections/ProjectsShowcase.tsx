@@ -10,6 +10,7 @@ import {
   Github,
   X,
 } from "lucide-react";
+import { JeSectionMarker } from "@/components/je/JeSectionMarker";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ConfidentialProjectNotice } from "@/components/sections/ConfidentialProjectNotice";
@@ -153,6 +154,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
   return (
     <>
       <section id="projects" className="pb-20 pt-4">
+        <JeSectionMarker stop="projects" title="Checkpoint 03" />
         <div className="mb-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#c44545]">

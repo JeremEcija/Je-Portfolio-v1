@@ -17,7 +17,7 @@ export const projects: Project[] = [
       "/images/ordering/ord-4.png",
     ],
     liveUrl: "https://ordering-system-ruddy-mu.vercel.app/",
-    featured: true,
+    featured: false,
   },
   {
     slug: "alumhub-alumni-engagement-system",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     longDescription:
       "AlumHub is a comprehensive web application developed for the Department of Computer Studies to enhance alumni engagement and monitor graduate employability. The platform bridges the gap between the institution and its graduates by offering an interactive community forum for real-time job postings, a student engagement leaderboard, and dynamic profile management. For administrators, the system features an analytical reporting dashboard tracking employment statistics alongside integrated email and SMS blast modules to seamlessly distribute surveys and department updates.",
     tags: ["HTML", "CSS", "JavaScript", "Firebase"],
-    confidential: true,
+    confidential: false,
     confidentialNotice:
       "AlumHub is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
     imageUrl: "/images/alumhub/alum-1.png",
@@ -60,6 +60,21 @@ export const projects: Project[] = [
       "/images/project-tracker/proj-5.png"
     ],
     featured: false,
+  },
+  {
+    slug:"purchasing-and-inventory-management-system",
+    title:"Purchasing & Inventory Management System",
+    description: "An enterprise-grade procurement and stock tracking system designed to bridge departmental material requests with warehouse operations.",
+    longDescription: "This is a full-scale Purchasing and Inventory System developed to streamline stock tracking, supplier coordination, and cross-departmental supply chains. The application allows individual departments to submit specialized Material Requests for physical assets or recipe ingredients, which are routed directly to the warehouse department for fulfillment or procurement. It features a robust multi-role portal and an automated reporting engine capable of generating audited insights—including Receiving Reports (RR), Asset Tagging, Inventory Counts, and comprehensive Vendor Purchase metrics.",
+    tags: ["Laravel", "Blade","Javascript", "Axios","Tailwind CSS", "MySQL", "Hostinger"],
+    confidential: true,
+    confidentialNotice:
+      "Purchasing & Inventory Management System is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
+    imageUrl: "/images/inv-po/inv.png",
+    screenshots: [
+      "/images/inv-po/inv.png",
+    ],
+    featured: true,
   },
 
 ];
