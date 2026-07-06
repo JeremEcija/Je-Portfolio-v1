@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ConfidentialProjectNotice } from "@/components/sections/ConfidentialProjectNotice";
 import { Project } from "@/types";
 
 function ProjectCard({
@@ -38,6 +39,7 @@ function ProjectCard({
               src={project.imageUrl ?? "/images/project-placeholder.svg"}
               alt={`${project.title} preview`}
               fill
+              sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </div>
@@ -193,6 +195,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                   src={screenshots[activeScreenshotIndex] ?? "/images/project-placeholder.svg"}
                   alt={`${activeProject.title} screenshot ${activeScreenshotIndex + 1}`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-contain p-3 sm:p-6"
                 />
 
@@ -238,6 +241,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                         src={screenshot}
                         alt={`${activeProject.title} thumbnail ${index + 1}`}
                         fill
+                        sizes="112px"
                         className="object-cover"
                       />
                     </button>
@@ -304,27 +308,33 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                   <p className="text-xs uppercase tracking-[0.3em] text-[#a2cb8b]/55">
                     Links
                   </p>
-                  <div className="mt-3 flex flex-col gap-3 sm:mt-4 sm:flex-row sm:flex-wrap">
-                    {activeProject.liveUrl && (
-                      <Button
-                        asChild
-                        className="h-11 w-full rounded-xl bg-[#c44545] text-[#f7fbe8] hover:bg-[#ad3d3d] sm:w-auto"
-                      >
-                        <a href={activeProject.liveUrl} target="_blank" rel="noopener noreferrer">
-                          Visit Live <ExternalLink className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    )}
-                    {activeProject.repoUrl && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="h-11 w-full rounded-xl border-[#a2cb8b]/20 bg-transparent text-[#e8f5bd] hover:bg-[#161d12] sm:w-auto"
-                      >
-                        <a href={activeProject.repoUrl} target="_blank" rel="noopener noreferrer">
-                          View Code <Github className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
+                  <div className="mt-3 sm:mt-4">
+                    {activeProject.confidential ? (
+                      <ConfidentialProjectNotice project={activeProject} />
+                    ) : (
+                      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        {activeProject.liveUrl && (
+                          <Button
+                            asChild
+                            className="h-11 w-full rounded-xl bg-[#c44545] text-[#f7fbe8] hover:bg-[#ad3d3d] sm:w-auto"
+                          >
+                            <a href={activeProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                              Visit Live <ExternalLink className="ml-2 h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                        {activeProject.repoUrl && (
+                          <Button
+                            asChild
+                            variant="outline"
+                            className="h-11 w-full rounded-xl border-[#a2cb8b]/20 bg-transparent text-[#e8f5bd] hover:bg-[#161d12] sm:w-auto"
+                          >
+                            <a href={activeProject.repoUrl} target="_blank" rel="noopener noreferrer">
+                              View Code <Github className="ml-2 h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
