@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { ConfidentialProjectNotice } from "@/components/sections/ConfidentialProjectNotice";
 import { getProjectBySlug, projects } from "@/data/projects";
 
 interface Props {
@@ -44,20 +45,26 @@ export default function ProjectDetailPage({ params }: Props) {
       <p className="mt-6 max-w-2xl text-muted-foreground">
         {project!.longDescription ?? project!.description}
       </p>
-      <div className="mt-8 flex gap-4">
-        {project!.liveUrl && (
-          <Button asChild>
-            <a href={project!.liveUrl} target="_blank" rel="noopener noreferrer">
-              Live Site
-            </a>
-          </Button>
-        )}
-        {project!.repoUrl && (
-          <Button asChild variant="outline">
-            <a href={project!.repoUrl} target="_blank" rel="noopener noreferrer">
-              View Code
-            </a>
-          </Button>
+      <div className="mt-8">
+        {project!.confidential ? (
+          <ConfidentialProjectNotice project={project!} />
+        ) : (
+          <div className="flex gap-4">
+            {project!.liveUrl && (
+              <Button asChild>
+                <a href={project!.liveUrl} target="_blank" rel="noopener noreferrer">
+                  Live Site
+                </a>
+              </Button>
+            )}
+            {project!.repoUrl && (
+              <Button asChild variant="outline">
+                <a href={project!.repoUrl} target="_blank" rel="noopener noreferrer">
+                  View Code
+                </a>
+              </Button>
+            )}
+          </div>
         )}
       </div>
     </article>

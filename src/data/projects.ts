@@ -21,11 +21,14 @@ export const projects: Project[] = [
   },
   {
     slug: "alumhub-alumni-engagement-system",
-    title: "AlumHub",
+    title: "AlumHub (Capstone Project)",
     description: "A centralized alumni tracking and career opportunity web application built for Cavite State University - CCAT Campus.",
     longDescription:
       "AlumHub is a comprehensive web application developed for the Department of Computer Studies to enhance alumni engagement and monitor graduate employability. The platform bridges the gap between the institution and its graduates by offering an interactive community forum for real-time job postings, a student engagement leaderboard, and dynamic profile management. For administrators, the system features an analytical reporting dashboard tracking employment statistics alongside integrated email and SMS blast modules to seamlessly distribute surveys and department updates.",
     tags: ["HTML", "CSS", "JavaScript", "Firebase"],
+    confidential: true,
+    confidentialNotice:
+      "AlumHub is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
     imageUrl: "/images/alumhub/alum-1.png",
     screenshots: [
       "/images/alumhub/alum-1.png",
@@ -45,6 +48,9 @@ export const projects: Project[] = [
     description: "A centralized department-level project management platform featuring active progress tracking, task delegation, and team discussions.",
     longDescription: "ProjectTrack is a collaborative workspace application built to monitor, manage, and distribute project tasks across internal departments. The platform provides administrators and team members with an aggregate analytics dashboard highlighting total workloads, pending items, and active bottleneck warnings. It supports fine-grained task management workflows, including dynamic task reassignments via an inline transfer modal, status tracking indicators (pending, in-progress, overdue, declined), and contextual item-by-item team chat boards to foster real-time collaboration.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    confidential: true,
+    confidentialNotice:
+      "Project Tracker is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
     imageUrl: "/images/project-tracker/proj-1.png",
     screenshots: [
       "/images/project-tracker/proj-1.png",
@@ -54,7 +60,8 @@ export const projects: Project[] = [
       "/images/project-tracker/proj-5.png"
     ],
     featured: false,
-  }
+  },
+
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

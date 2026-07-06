@@ -9,6 +9,8 @@ export interface Project {
   liveUrl?: string;
   repoUrl?: string;
   featured?: boolean;
+  confidential?: boolean;
+  confidentialNotice?: string;
 }
 
 export interface ExperienceItem {

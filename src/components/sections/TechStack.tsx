@@ -42,6 +42,11 @@ const stackGroups: {
   },
 ];
 
+const totalTechnologies = stackGroups.reduce(
+  (sum, group) => sum + group.items.length,
+  0
+);
+
 function StackCard({
   item,
   compact = false,  
@@ -104,8 +109,8 @@ export function TechStack() {
           </h2>
         </div>
         <p className="max-w-xl text-sm leading-7 text-[#e8f5bd]/72 sm:text-base">
-          23 technologies I reach for, organized by where they live in the
-          build.
+          {totalTechnologies} technologies across languages, frameworks, databases,
+          tools, and platforms.
         </p>
       </div>
 
