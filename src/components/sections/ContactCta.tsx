@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { JeSectionMarker } from "@/components/je/JeSectionMarker";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const contactLinks = [
@@ -22,6 +23,7 @@ const contactLinks = [
 export function ContactCta() {
   return (
     <section id="contact" className="pb-24 pt-6">
+      <JeSectionMarker stop="contact" title="Checkpoint 04" />
       <div className="border-y border-[#a2cb8b]/10 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#c44545]">

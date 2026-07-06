@@ -1,3 +1,5 @@
+import { JeSectionMarker } from "@/components/je/JeSectionMarker";
+
 type StackItem = {
   label: string;
   icon?: string;
@@ -99,6 +101,7 @@ function StackCard({
 export function TechStack() {
   return (
     <section id="tech-stack" className="pb-20 pt-4">
+      <JeSectionMarker stop="tech-stack" title="Checkpoint 02" />
       <div className="mb-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#c44545]">

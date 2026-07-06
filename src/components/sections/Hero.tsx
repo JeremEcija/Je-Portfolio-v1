@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, Download, Mail } from "lucide-react";
+import { JeNavigator } from "@/components/je/JeNavigator";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -30,9 +31,10 @@ export function Hero() {
 
         <div className="order-1 lg:order-2">
 
-          <p className="text-sm uppercase tracking-[0.34em] text-[#e8f5bd]/55">
-            <span className="typing-callme">Call me JE.</span>
-          </p>
+          <div className="flex flex-col gap-3 text-sm uppercase tracking-[0.34em] text-[#e8f5bd]/55 sm:flex-row sm:flex-wrap sm:items-center">
+            <span className="typing-callme shrink-0">Call me ME.</span>
+            <JeNavigator />
+          </div>
           <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-[0.9] text-[#f7fbe8] sm:text-6xl lg:text-7xl">
             <span className="block">I build </span>
             <span className="block text-[#a2cb8b]">full-stack</span>
