@@ -32,7 +32,7 @@ export function Hero() {
         <div className="order-1 lg:order-2">
 
           <div className="flex flex-col gap-3 text-sm uppercase tracking-[0.34em] text-[#e8f5bd]/55 sm:flex-row sm:flex-wrap sm:items-center">
-            <span className="typing-callme shrink-0">Call me ME.</span>
+            <span className="typing-callme shrink-0">Call me JE.</span>
             <JeNavigator />
           </div>
           <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-[0.9] text-[#f7fbe8] sm:text-6xl lg:text-7xl">
@@ -43,11 +43,11 @@ export function Hero() {
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#e8f5bd]/75 sm:text-lg">
             Laravel and PHP on the Backend, Vue and React on the frontend.
           </p>
-          <div className="mt-8 border-l border-[#c44545]/70 pl-4">
+          <div className="mt-8">
             <p className="font-serif text-xl italic text-[#f7fbe8]">
-              &quot;In every problem there is a solution.&quot;
+              &quot;In every problem there is a{" "}
+              <span className="border-b border-[#c44545]/100 pb-1 font-bold">solution.&quot;</span>
             </p>
-
           </div>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button

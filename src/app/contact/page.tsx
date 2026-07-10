@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SITE_CONFIG } from "@/lib/constants";
+import { GMAIL_COMPOSE_URL, SITE_CONFIG } from "@/lib/constants";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -42,7 +42,12 @@ export default function ContactPage() {
       <h1 className="text-3xl font-bold">Contact</h1>
       <p className="mt-4 max-w-xl text-muted-foreground">
         Send me a message below, or email me directly at{" "}
-        <a href={`mailto:${SITE_CONFIG.email}`} className="underline">
+        <a
+          href={GMAIL_COMPOSE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
           {SITE_CONFIG.email}
         </a>
         .
