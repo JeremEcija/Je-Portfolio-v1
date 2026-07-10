@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { JeSectionMarker } from "@/components/je/JeSectionMarker";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, GMAIL_COMPOSE_URL } from "@/lib/constants";
 
 const contactLinks = [
   {
@@ -15,7 +15,7 @@ const contactLinks = [
   },
   {
     label: "Gmail",
-    href: `mailto:${SITE_CONFIG.email}`,
+    href: GMAIL_COMPOSE_URL,
     icon: Mail,
   },
 ];
@@ -46,12 +46,8 @@ export function ContactCta() {
                 <a
                   key={link.label}
                   href={link.href}
-                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={
-                    link.href.startsWith("mailto:")
-                      ? undefined
-                      : "noopener noreferrer"
-                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl border border-[#a2cb8b]/12 bg-[#161d12] px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#e8f5bd] transition-colors hover:border-[#a2cb8b]/30 hover:bg-[#1b2416]"
                 >
                   <Icon className="h-4 w-4" />

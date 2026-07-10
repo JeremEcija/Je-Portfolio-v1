@@ -8,7 +8,7 @@ export const projects: Project[] = [
     title: "Ordering System",
     description: "A sleek, responsive restaurant landing page featuring an interactive slide-out ordering menu.",
     longDescription: "Delicious is a modern front-end restaurant application designed to showcase a premium dining experience. It features a fully responsive design, custom menu filtering for 'Best Sellers' and 'Set Meals', and a dynamic, client-side slide-out cart panel that tracks user selections in real time. Built with performance and clean aesthetics in mind, this project demonstrates smooth UI interactions and modular component architecture.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     imageUrl: "/images/ordering/ord-1.png",
     screenshots: [
       "/images/ordering/ord-1.png",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     longDescription:
       "AlumHub is a comprehensive web application developed for the Department of Computer Studies to enhance alumni engagement and monitor graduate employability. The platform bridges the gap between the institution and its graduates by offering an interactive community forum for real-time job postings, a student engagement leaderboard, and dynamic profile management. For administrators, the system features an analytical reporting dashboard tracking employment statistics alongside integrated email and SMS blast modules to seamlessly distribute surveys and department updates.",
     tags: ["HTML", "CSS", "JavaScript", "Firebase"],
-    confidential: false,
+    confidential: true,
     confidentialNotice:
       "AlumHub is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
     imageUrl: "/images/alumhub/alum-1.png",
@@ -73,6 +73,27 @@ export const projects: Project[] = [
     imageUrl: "/images/inv-po/inv.png",
     screenshots: [
       "/images/inv-po/inv.png",
+    ],
+    featured: true,
+  },
+  {
+    slug:"it-support-ticketing-system",
+    title:"IT Support Ticketing System",
+    description: "An internal helpdesk platform enabling multi-department technical support requests with robust device auditing and encrypted routing security.",
+    longDescription: "The IT Support Ticketing System is a secure helpdesk platform designed for inter-departmental technical issue resolution. Employees can submit hardware or software support tickets through a streamlined client interface. To prevent parameter tampering and unauthorized URL data exposure, department and division identifiers are securely encrypted. The application includes a comprehensive 'View Logs' administration console featuring a real-time audit log that extracts hardware-level telemetry, capturing IP addresses, browser engine details, and operating systems for security analysis. Once a technical problem is resolved, the platform supports a formal sign-off workflow including physical printing options and digital employee signature validation.",
+    tags: ["Laravel", "Blade","Javascript", "Axios","Tailwind CSS", "MySQL", "Websocket"],
+    confidential: true,
+    confidentialNotice:
+      "Purchasing & Inventory Management System is covered by a non-disclosure agreement. Live demos, source code, and detailed project information cannot be shared publicly.",
+    imageUrl: "/images/ticket/tic-1.png",
+    screenshots: [
+      "/images/ticket/tic-1.png",
+      "/images/ticket/tic-2.png",
+      "/images/ticket/tic-3.png",
+      "/images/ticket/tic-4.png",
+      "/images/ticket/tic-5.png",
+      "/images/ticket/tic-6.png",
+      "/images/ticket/tic-7.png",
     ],
     featured: true,
   },

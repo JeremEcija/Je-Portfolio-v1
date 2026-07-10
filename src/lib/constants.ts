@@ -8,10 +8,10 @@ export const SITE_CONFIG = {
   social: {
     github: "https://github.com/your-username",
     linkedin: "https://linkedin.com/in/your-username",
-    twitter: "https://twitter.com/your-username",
   },
 };
 
+export const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SITE_CONFIG.email)}`;
 export const NAV_LINKS = [
   { href: "/#home", label: "Home" },
   { href: "/#tech-stack", label: "Tech Stack" },
